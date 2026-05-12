@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Amogh Hasotkar - Data Engineer portfolio focused on Snowflake, AWS, Airflow, dbt, Spark, SQL, and Python." />
+  <title>Amogh Hasotkar | Data Engineer</title>
+  <style>
+    :root {
+      --bg: #f7f2ea;
+      --text: #17202a;
+      --muted: #5f6f7c;
+      --card: #ffffff;
+      --line: #e8dfd2;
+      --accent: #b7791f;
+      --accent-soft: #fff4dc;
+      --dark: #13232f;
+      --dark-soft: #203747;
+      --shadow: 0 22px 55px rgba(23, 32, 42, 0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(183, 121, 31, 0.14), transparent 32%),
+        linear-gradient(180deg, #fbf7f0 0%, var(--bg) 45%, #f5eee4 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 242, 234, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(232, 223, 210, 0.9);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: white;
+      font-size: 14px;
+      box-shadow: 0 10px 24px rgba(19, 35, 47, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 58px;
+      display: grid;
+      grid-template-columns: 1.28fr 0.72fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #8a5a11;
+      border: 1px solid #f0d8a7;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.94;
+      letter-spacing: -3.2px;
+      margin-bottom: 26px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 19px;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+      box-shadow: 0 14px 30px rgba(19, 35, 47, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(232, 223, 210, 0.95);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, var(--dark), #7c4a12);
+      color: white;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .profile-card h2 {
+      font-size: 25px;
+      letter-spacing: -0.8px;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-list span {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 14px;
+      background: #fbfaf8;
+      border: 1px solid #edf0f2;
+      color: #344454;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 18px 0 48px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(23, 32, 42, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      letter-spacing: -1px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 12px;
+      margin-bottom: 9px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(23, 32, 42, 0.06);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f4eadb;
+      color: #80530f;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .dark-panel {
+      background: linear-gradient(135deg, var(--dark), var(--dark-soft));
+      color: white;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 24px 60px rgba(19, 35, 47, 0.22);
+    }
+
+    .dark-panel .section-subtitle,
+    .dark-panel p {
+      color: #d3dde6;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .skill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(23, 32, 42, 0.05);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-list li {
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .mini-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 28px 0 38px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        min-height: 66px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card,
+      .dark-panel,
+      .contact-box {
+        border-radius: 24px;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Amogh Hasotkar home">
+          <span class="brand-mark">AH</span>
+          <span>Amogh Hasotkar</span>
+        </a>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Data Engineer · AWS · Snowflake · Airflow</div>
+        <h1>Building reliable data platforms and production-ready pipelines.</h1>
+        <p class="hero-copy">
+          I am a Data Engineer with 4+ years of experience across cloud data platforms, ETL/ELT pipelines,
+          data quality, observability, and analytics engineering. I build systems that are easier to run,
+          easier to debug, and easier to trust.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/amoghhasotkar1999" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-secondary" href="./Amogh_Hasotkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="avatar">AH</div>
+        <h2>Amogh Hasotkar</h2>
+        <div class="role">Data Engineer at Capgemini</div>
+        <p>
+          Based in Atlanta. MSIS graduate from UT Austin. AWS Certified Data Engineer and SnowPro Core Certified.
+        </p>
+        <div class="quick-list">
+          <span>Cloud data platforms and pipeline automation</span>
+          <span>Snowflake, AWS, Spark, dbt, Airflow</span>
+          <span>Open to Data Engineer and data-adjacent backend roles</span>
+        </div>
+      </aside>
+    </section>
+
+    <div class="stats" aria-label="Career highlights">
+      <div class="stat">
+        <strong>4+</strong>
+        <span>Years of data engineering experience</span>
+      </div>
+      <div class="stat">
+        <strong>10TB+</strong>
+        <span>Data migrated to Snowflake</span>
+      </div>
+      <div class="stat">
+        <strong>800+</strong>
+        <span>Data sources supported</span>
+      </div>
+      <div class="stat">
+        <strong>1M+</strong>
+        <span>Daily records processed</span>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="section-header">
+        <div class="section-kicker">Featured work</div>
+        <h2 class="section-title">Projects and engineering focus areas</h2>
+        <p class="section-subtitle">
+          A snapshot of the systems I have built and improved across ingestion, transformation, quality, monitoring,
+          and warehouse performance.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Snowflake + Python</span>
+          <h3>Centralized error-handling and data-quality framework</h3>
+          <p>
+            Designed a Snowflake and Snowpark-based framework to validate data before load, capture issues in error tables,
+            and improve traceability across pipelines.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">AWS + Metadata</span>
+          <h3>Modular ingestion framework</h3>
+          <p>
+            Redesigned ingestion into a metadata-driven pipeline with restartability, granular logging, and selective execution
+            for core S3-to-Snowflake ETL workflows.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">SFTP + REST APIs</span>
+          <h3>Secure external data ingestion</h3>
+          <p>
+            Built parameterized ingestion pipelines for SFTP and external REST APIs with retry logic, rate limiting,
+            transformation orchestration, and production-grade monitoring.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">dbt + BigQuery</span>
+          <h3>IMDb data warehouse ELT pipeline</h3>
+          <p>
+            Built a normalized movie data warehouse using API-enriched datasets, dbt layered transformations, shell scheduling,
+            and snapshots for historical tracking.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Migration</span>
+          <h3>Legacy warehouse to Snowflake migration</h3>
+          <p>
+            Helped migrate 10TB+ of data to Snowflake, improving query response time and reporting availability for business users.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Analytics</span>
+          <h3>Business-ready marts and dashboards</h3>
+          <p>
+            Developed dbt models and curated Snowflake layers with tests and documentation to support trusted reporting for stakeholders.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="dark-panel">
+        <div class="section-header">
+          <div class="section-kicker">Technical toolkit</div>
+          <h2 class="section-title">Skills I use to build reliable data systems</h2>
+          <p class="section-subtitle">
+            Strongest areas include Python, SQL, Snowflake, AWS, Airflow, Spark, dbt, data modeling, ETL/ELT design,
+            CI/CD, and production pipeline operations.
+          </p>
+        </div>
+        <div class="skill-cloud">
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Shell Scripting</span>
+          <span class="skill">AWS S3</span>
+          <span class="skill">AWS Glue</span>
+          <span class="skill">AWS Lambda</span>
+          <span class="skill">Snowflake</span>
+          <span class="skill">Snowpark</span>
+          <span class="skill">Apache Airflow</span>
+          <span class="skill">Apache Spark</span>
+          <span class="skill">PySpark</span>
+          <span class="skill">dbt</span>
+          <span class="skill">BigQuery</span>
+          <span class="skill">Redshift</span>
+          <span class="skill">Oracle</span>
+          <span class="skill">Databricks</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Iceberg</span>
+          <span class="skill">Git</span>
+          <span class="skill">CI/CD</span>
+          <span class="skill">Data Modeling</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-kicker">Experience</div>
+        <h2 class="section-title">Professional timeline</h2>
+        <p class="section-subtitle">
+          Recent roles across consulting, government, and university environments with a focus on scalable data platforms.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date">May 2025 - Present</div>
+          <div>
+            <h3>Data Engineer</h3>
+            <div class="company">Capgemini · Atlanta, GA</div>
+            <p>
+              Building Snowflake, AWS, dbt, and Python-based data engineering frameworks focused on ingestion,
+              data quality, observability, and scalable source onboarding.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jan 2025 - Apr 2025</div>
+          <div>
+            <h3>Data Engineer Intern</h3>
+            <div class="company">Texas Department of Motor Vehicles · Austin, TX</div>
+            <p>
+              Streamlined ingestion of 500K+ daily records from DB2 using Python and SQL and supported migration workflows
+              with validation and error handling.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jan 2024 - May 2025</div>
+          <div>
+            <h3>Graduate Teaching Assistant</h3>
+            <div class="company">The University of Texas at Austin · Austin, TX</div>
+            <p>
+              Supported courses in data warehousing and databases, helping students with SQL, Python, dbt, BigQuery,
+              Apache Airflow, GCP, and data modeling concepts.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jun 2021 - Jun 2023</div>
+          <div>
+            <h3>Data Engineer</h3>
+            <div class="company">Capgemini · Mumbai, India</div>
+            <p>
+              Worked on Snowflake migration, Airflow-based ELT, SQL optimization, reporting performance improvement,
+              and cross-functional delivery of analytics-ready datasets.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <article class="card">
+          <span class="tag">Education</span>
+          <h3>The University of Texas at Austin</h3>
+          <p>Master of Science in Information Systems Management · GPA 3.94/4.0 · Cloud Computing and Data Engineering</p>
+          <ul class="mini-list">
+            <li>Thakur College of Engineering and Technology, University of Mumbai</li>
+            <li>Bachelor of Engineering in Information Technology</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">Certifications</span>
+          <h3>Cloud and data certifications</h3>
+          <ul class="mini-list">
+            <li>AWS Certified Data Engineer - Associate</li>
+            <li>SnowPro Core Certified</li>
+            <li>Machine Learning A-Z: Hands-On Python & R in Data Science</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s connect</h2>
+          <p class="section-subtitle">
+            I am open to Data Engineer, Data Analyst, Analytics Engineer, and backend/data-platform opportunities.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Amogh Hasotkar. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Amogh Hasotkar - Data Engineer portfolio focused on Snowflake, AWS, Airflow, dbt, Spark, SQL, and Python." />
+  <title>Amogh Hasotkar | Data Engineer</title>
+  <style>
+    :root {
+      --bg: #f7f2ea;
+      --text: #17202a;
+      --muted: #5f6f7c;
+      --card: #ffffff;
+      --line: #e8dfd2;
+      --accent: #b7791f;
+      --accent-soft: #fff4dc;
+      --dark: #13232f;
+      --dark-soft: #203747;
+      --shadow: 0 22px 55px rgba(23, 32, 42, 0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(183, 121, 31, 0.14), transparent 32%),
+        linear-gradient(180deg, #fbf7f0 0%, var(--bg) 45%, #f5eee4 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 242, 234, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(232, 223, 210, 0.9);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: white;
+      font-size: 14px;
+      box-shadow: 0 10px 24px rgba(19, 35, 47, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 58px;
+      display: grid;
+      grid-template-columns: 1.28fr 0.72fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #8a5a11;
+      border: 1px solid #f0d8a7;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.94;
+      letter-spacing: -3.2px;
+      margin-bottom: 26px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 19px;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+      box-shadow: 0 14px 30px rgba(19, 35, 47, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(232, 223, 210, 0.95);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, var(--dark), #7c4a12);
+      color: white;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .profile-card h2 {
+      font-size: 25px;
+      letter-spacing: -0.8px;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-list span {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 14px;
+      background: #fbfaf8;
+      border: 1px solid #edf0f2;
+      color: #344454;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 18px 0 48px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 12px 32px rgba(23, 32, 42, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      letter-spacing: -1px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 12px;
+      margin-bottom: 9px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(23, 32, 42, 0.06);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f4eadb;
+      color: #80530f;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .dark-panel {
+      background: linear-gradient(135deg, var(--dark), var(--dark-soft));
+      color: white;
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: 0 24px 60px rgba(19, 35, 47, 0.22);
+    }
+
+    .dark-panel .section-subtitle,
+    .dark-panel p {
+      color: #d3dde6;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .skill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.11);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(23, 32, 42, 0.05);
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .timeline-item h3 {
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-list li {
+      list-style: none;
+      padding-left: 20px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    .mini-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 28px 0 38px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        min-height: 66px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card,
+      .dark-panel,
+      .contact-box {
+        border-radius: 24px;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Amogh Hasotkar home">
+          <span class="brand-mark">AH</span>
+          <span>Amogh Hasotkar</span>
+        </a>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Data Engineer · AWS · Snowflake · Airflow</div>
+        <h1>Building reliable data platforms and production-ready pipelines.</h1>
+        <p class="hero-copy">
+          I am a Data Engineer with 4+ years of experience across cloud data platforms, ETL/ELT pipelines,
+          data quality, observability, and analytics engineering. I build systems that are easier to run,
+          easier to debug, and easier to trust.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/amoghhasotkar1999" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-secondary" href="./Amogh_Hasotkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="avatar">AH</div>
+        <h2>Amogh Hasotkar</h2>
+        <div class="role">Data Engineer at Capgemini</div>
+        <p>
+          Based in Atlanta. MSIS graduate from UT Austin. AWS Certified Data Engineer and SnowPro Core Certified.
+        </p>
+        <div class="quick-list">
+          <span>Cloud data platforms and pipeline automation</span>
+          <span>Snowflake, AWS, Spark, dbt, Airflow</span>
+          <span>Open to Data Engineer and data-adjacent backend roles</span>
+        </div>
+      </aside>
+    </section>
+
+    <div class="stats" aria-label="Career highlights">
+      <div class="stat">
+        <strong>4+</strong>
+        <span>Years of data engineering experience</span>
+      </div>
+      <div class="stat">
+        <strong>10TB+</strong>
+        <span>Data migrated to Snowflake</span>
+      </div>
+      <div class="stat">
+        <strong>800+</strong>
+        <span>Data sources supported</span>
+      </div>
+      <div class="stat">
+        <strong>1M+</strong>
+        <span>Daily records processed</span>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="section-header">
+        <div class="section-kicker">Featured work</div>
+        <h2 class="section-title">Projects and engineering focus areas</h2>
+        <p class="section-subtitle">
+          A snapshot of the systems I have built and improved across ingestion, transformation, quality, monitoring,
+          and warehouse performance.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Snowflake + Python</span>
+          <h3>Centralized error-handling and data-quality framework</h3>
+          <p>
+            Designed a Snowflake and Snowpark-based framework to validate data before load, capture issues in error tables,
+            and improve traceability across pipelines.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">AWS + Metadata</span>
+          <h3>Modular ingestion framework</h3>
+          <p>
+            Redesigned ingestion into a metadata-driven pipeline with restartability, granular logging, and selective execution
+            for core S3-to-Snowflake ETL workflows.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">SFTP + REST APIs</span>
+          <h3>Secure external data ingestion</h3>
+          <p>
+            Built parameterized ingestion pipelines for SFTP and external REST APIs with retry logic, rate limiting,
+            transformation orchestration, and production-grade monitoring.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">dbt + BigQuery</span>
+          <h3>IMDb data warehouse ELT pipeline</h3>
+          <p>
+            Built a normalized movie data warehouse using API-enriched datasets, dbt layered transformations, shell scheduling,
+            and snapshots for historical tracking.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Migration</span>
+          <h3>Legacy warehouse to Snowflake migration</h3>
+          <p>
+            Helped migrate 10TB+ of data to Snowflake, improving query response time and reporting availability for business users.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Analytics</span>
+          <h3>Business-ready marts and dashboards</h3>
+          <p>
+            Developed dbt models and curated Snowflake layers with tests and documentation to support trusted reporting for stakeholders.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="dark-panel">
+        <div class="section-header">
+          <div class="section-kicker">Technical toolkit</div>
+          <h2 class="section-title">Skills I use to build reliable data systems</h2>
+          <p class="section-subtitle">
+            Strongest areas include Python, SQL, Snowflake, AWS, Airflow, Spark, dbt, data modeling, ETL/ELT design,
+            CI/CD, and production pipeline operations.
+          </p>
+        </div>
+        <div class="skill-cloud">
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Shell Scripting</span>
+          <span class="skill">AWS S3</span>
+          <span class="skill">AWS Glue</span>
+          <span class="skill">AWS Lambda</span>
+          <span class="skill">Snowflake</span>
+          <span class="skill">Snowpark</span>
+          <span class="skill">Apache Airflow</span>
+          <span class="skill">Apache Spark</span>
+          <span class="skill">PySpark</span>
+          <span class="skill">dbt</span>
+          <span class="skill">BigQuery</span>
+          <span class="skill">Redshift</span>
+          <span class="skill">Oracle</span>
+          <span class="skill">Databricks</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Iceberg</span>
+          <span class="skill">Git</span>
+          <span class="skill">CI/CD</span>
+          <span class="skill">Data Modeling</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-kicker">Experience</div>
+        <h2 class="section-title">Professional timeline</h2>
+        <p class="section-subtitle">
+          Recent roles across consulting, government, and university environments with a focus on scalable data platforms.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date">May 2025 - Present</div>
+          <div>
+            <h3>Data Engineer</h3>
+            <div class="company">Capgemini · Atlanta, GA</div>
+            <p>
+              Building Snowflake, AWS, dbt, and Python-based data engineering frameworks focused on ingestion,
+              data quality, observability, and scalable source onboarding.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jan 2025 - Apr 2025</div>
+          <div>
+            <h3>Data Engineer Intern</h3>
+            <div class="company">Texas Department of Motor Vehicles · Austin, TX</div>
+            <p>
+              Streamlined ingestion of 500K+ daily records from DB2 using Python and SQL and supported migration workflows
+              with validation and error handling.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jan 2024 - May 2025</div>
+          <div>
+            <h3>Graduate Teaching Assistant</h3>
+            <div class="company">The University of Texas at Austin · Austin, TX</div>
+            <p>
+              Supported courses in data warehousing and databases, helping students with SQL, Python, dbt, BigQuery,
+              Apache Airflow, GCP, and data modeling concepts.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Jun 2021 - Jun 2023</div>
+          <div>
+            <h3>Data Engineer</h3>
+            <div class="company">Capgemini · Mumbai, India</div>
+            <p>
+              Worked on Snowflake migration, Airflow-based ELT, SQL optimization, reporting performance improvement,
+              and cross-functional delivery of analytics-ready datasets.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <article class="card">
+          <span class="tag">Education</span>
+          <h3>The University of Texas at Austin</h3>
+          <p>Master of Science in Information Systems Management · GPA 3.94/4.0 · Cloud Computing and Data Engineering</p>
+          <ul class="mini-list">
+            <li>Thakur College of Engineering and Technology, University of Mumbai</li>
+            <li>Bachelor of Engineering in Information Technology</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="tag">Certifications</span>
+          <h3>Cloud and data certifications</h3>
+          <ul class="mini-list">
+            <li>AWS Certified Data Engineer - Associate</li>
+            <li>SnowPro Core Certified</li>
+            <li>Machine Learning A-Z: Hands-On Python & R in Data Science</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s connect</h2>
+          <p class="section-subtitle">
+            I am open to Data Engineer, Data Analyst, Analytics Engineer, and backend/data-platform opportunities.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Amogh Hasotkar. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
