@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amogh Hasotkar - Data Engineer portfolio focused on Snowflake, AWS, Airflow, dbt, Spark, SQL, and Python." />
-  <title>Amogh Hasotkar | Data Engineer</title>
+  <meta name="description" content="Amogh Hasotkar - Senior Data Engineer working with Snowflake, dbt, Airflow, AWS, and Python." />
+  <title>Amogh Hasotkar | Senior Data Engineer</title>
   <style>
     :root {
       --bg: #f7f2ea;
@@ -506,15 +506,14 @@
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <div class="eyebrow">Data Engineer · AWS · Snowflake · Airflow</div>
-        <h1>Building reliable data platforms and production-ready pipelines.</h1>
+        <div class="eyebrow">Senior Data Engineer · Snowflake · dbt · Airflow</div>
+        <h1>I build data pipelines that catch bad data early.</h1>
         <p class="hero-copy">
-          I am a Data Engineer with 4+ years of experience across cloud data platforms, ETL/ELT pipelines,
-          data quality, observability, and analytics engineering. I build systems that are easier to run,
-          easier to debug, and easier to trust.
+          I'm a Senior Data Engineer with nearly 4 years of experience in ETL/ELT pipelines, data quality,
+          and cloud data platforms. I lead a team of 7 engineers and still write code most days.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@utexas.edu">Email Me</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn btn-secondary" href="https://github.com/amoghhasotkar" target="_blank" rel="noopener">GitHub</a>
           <a class="btn btn-secondary" href="./Amogh_Hasotkar_Resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -524,97 +523,98 @@
       <aside class="profile-card">
         <div class="avatar">AH</div>
         <h2>Amogh Hasotkar</h2>
-        <div class="role">Data Engineer at Capgemini</div>
+        <div class="role">Senior Data Engineer at Capgemini</div>
         <p>
-          MSIS graduate from UT Austin. AWS Certified Data Engineer and SnowPro Core Certified.
+          M.S. in Information Systems Management from UT Austin. AWS Certified Data Engineer and SnowPro Core Certified.
         </p>
         <div class="quick-list">
-          <span>Cloud data platforms and pipeline automation</span>
-          <span>Snowflake, AWS, Spark, dbt, Airflow</span>
-          <span>Open to Data Engineer and data-adjacent backend roles</span>
+          <span>Data quality, ingestion, and orchestration</span>
+          <span>Snowflake, dbt, Airflow, AWS</span>
+          <span>Open to Data Engineer roles</span>
         </div>
       </aside>
     </section>
 
     <div class="stats" aria-label="Career highlights">
       <div class="stat">
-        <strong>4+</strong>
-        <span>Years of data engineering experience</span>
+        <strong>7</strong>
+        <span>Engineers on the team I lead</span>
       </div>
       <div class="stat">
-        <strong>10TB+</strong>
-        <span>Data migrated to Snowflake</span>
+        <strong>10TB</strong>
+        <span>Moved from a legacy database to Snowflake</span>
       </div>
       <div class="stat">
-        <strong>800+</strong>
-        <span>Data sources supported</span>
+        <strong>60%</strong>
+        <span>Faster queries after that move</span>
       </div>
       <div class="stat">
-        <strong>1M+</strong>
-        <span>Daily records processed</span>
+        <strong>30%</strong>
+        <span>Fewer pipeline failures after my data quality framework</span>
       </div>
     </div>
 
     <section id="work">
       <div class="section-header">
         <div class="section-kicker">Featured work</div>
-        <h2 class="section-title">Projects and engineering focus areas</h2>
+        <h2 class="section-title">Things I've built</h2>
         <p class="section-subtitle">
-          A snapshot of the systems I have built and improved across ingestion, transformation, quality, monitoring,
-          and warehouse performance.
+          A few systems from my work, described without client details, plus one personal project.
         </p>
       </div>
 
       <div class="grid">
         <article class="card">
           <span class="tag">Snowflake + Python</span>
-          <h3>Centralized error-handling and data-quality framework</h3>
+          <h3>Data quality framework</h3>
           <p>
-            Designed a Snowflake and Snowpark-based framework to validate data before load, capture issues in error tables,
-            and improve traceability across pipelines.
+            Checks each batch before it loads, sets aside bad rows with the reason and the pipeline run that caused them,
+            and lets clean rows through. New sources need no manual setup. Pipeline failures dropped by about 30%.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">AWS + Metadata</span>
-          <h3>Modular ingestion framework</h3>
+          <span class="tag">SFTP · APIs · S3</span>
+          <h3>File exchange for a corporate merger</h3>
           <p>
-            Redesigned ingestion into a metadata-driven pipeline with restartability, granular logging, and selective execution
-            for core S3-to-Snowflake ETL workflows.
+            Pulls files from SFTP, S3, APIs, and SharePoint and delivers them externally with encryption, record-count checks,
+            and an audit log of every transfer, plus alerts when a delivery misses its deadline.
           </p>
         </article>
 
         <article class="card">
-          <span class="tag">SFTP + REST APIs</span>
-          <h3>Secure external data ingestion</h3>
+          <span class="tag">Automation + AI</span>
+          <h3>Self-healing production jobs</h3>
           <p>
-            Built parameterized ingestion pipelines for SFTP and external REST APIs with retry logic, rate limiting,
-            transformation orchestration, and production-grade monitoring.
+            Failed jobs restart on their own, and critical failures email the on-call team an AI-written
+            explanation of what went wrong and a suggested fix.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">AWS Glue</span>
+          <h3>Splitting a 12,000-line Glue job</h3>
+          <p>
+            Broke one oversized job into four smaller ones, with an optional middle step that only runs when it's needed,
+            which lowered our Glue costs.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">dbt + Snowflake</span>
+          <h3>Tested dbt models</h3>
+          <p>
+            Built dbt models with automated tests and Git-based CI/CD, so data problems were caught before they reached
+            dashboards used by 20+ stakeholders.
           </p>
         </article>
 
         <article class="card">
           <span class="tag">dbt + BigQuery</span>
-          <h3>IMDb data warehouse ELT pipeline</h3>
+          <h3>IMDb data warehouse</h3>
           <p>
-            Built a normalized movie data warehouse using API-enriched datasets, dbt layered transformations, shell scheduling,
-            and snapshots for historical tracking.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="tag">Migration</span>
-          <h3>Legacy warehouse to Snowflake migration</h3>
-          <p>
-            Helped migrate 10TB+ of data to Snowflake, improving query response time and reporting availability for business users.
-          </p>
-        </article>
-
-        <article class="card">
-          <span class="tag">Analytics</span>
-          <h3>Business-ready marts and dashboards</h3>
-          <p>
-            Developed dbt models and curated Snowflake layers with tests and documentation to support trusted reporting for stakeholders.
+            A personal project. Pulled movie data from APIs, cleaned it with Gemini, and loaded it into a normalized
+            BigQuery warehouse with layered dbt models and snapshots for history.
           </p>
         </article>
       </div>
@@ -624,34 +624,33 @@
       <div class="dark-panel">
         <div class="section-header">
           <div class="section-kicker">Technical toolkit</div>
-          <h2 class="section-title">Skills I use to build reliable data systems</h2>
+          <h2 class="section-title">Tools I use</h2>
           <p class="section-subtitle">
-            Strongest areas include Python, SQL, Snowflake, AWS, Airflow, Spark, dbt, data modeling, ETL/ELT design,
-            CI/CD, and production pipeline operations.
+            Python, SQL, Snowflake, dbt, and Airflow every day, and AWS, Spark, and BigQuery when the job calls for them.
           </p>
         </div>
         <div class="skill-cloud">
           <span class="skill">Python</span>
           <span class="skill">SQL</span>
           <span class="skill">Shell Scripting</span>
+          <span class="skill">Snowflake</span>
+          <span class="skill">Snowpark</span>
+          <span class="skill">dbt</span>
+          <span class="skill">Apache Airflow</span>
           <span class="skill">AWS S3</span>
           <span class="skill">AWS Glue</span>
           <span class="skill">AWS Lambda</span>
-          <span class="skill">Snowflake</span>
-          <span class="skill">Snowpark</span>
-          <span class="skill">Apache Airflow</span>
           <span class="skill">Apache Spark</span>
           <span class="skill">PySpark</span>
-          <span class="skill">dbt</span>
           <span class="skill">BigQuery</span>
-          <span class="skill">Redshift</span>
-          <span class="skill">Oracle</span>
           <span class="skill">Databricks</span>
+          <span class="skill">Oracle</span>
           <span class="skill">Pandas</span>
           <span class="skill">Iceberg</span>
           <span class="skill">Git</span>
           <span class="skill">CI/CD</span>
           <span class="skill">Data Modeling</span>
+          <span class="skill">Gemini</span>
         </div>
       </div>
     </section>
@@ -659,9 +658,9 @@
     <section id="experience">
       <div class="section-header">
         <div class="section-kicker">Experience</div>
-        <h2 class="section-title">Professional timeline</h2>
+        <h2 class="section-title">Where I've worked</h2>
         <p class="section-subtitle">
-          Recent roles across consulting, government, and university environments with a focus on scalable data platforms.
+          Consulting, government, and university roles, all centered on data pipelines.
         </p>
       </div>
 
@@ -669,11 +668,11 @@
         <article class="timeline-item">
           <div class="timeline-date">May 2025 - Present</div>
           <div>
-            <h3>Data Engineer</h3>
+            <h3>Senior Data Engineer</h3>
             <div class="company">Capgemini · Atlanta, GA</div>
             <p>
-              Building Snowflake, AWS, dbt, and Python-based data engineering frameworks focused on ingestion,
-              data quality, observability, and scalable source onboarding.
+              Leading a team of 7 engineers on a client's merger data project and still writing code myself. I built the data
+              quality framework and the file exchange pipelines described above, and I handle architecture decisions and code reviews.
             </p>
           </div>
         </article>
@@ -684,8 +683,20 @@
             <h3>Data Engineer Intern</h3>
             <div class="company">Texas Department of Motor Vehicles · Austin, TX</div>
             <p>
-              Streamlined ingestion of 500K+ daily records from DB2 using Python and SQL and supported migration workflows
-              with validation and error handling.
+              Built a Python and SQL load of 100K+ daily records from DB2 to replace a manual process, and wrote SQL Server
+              stored procedures to replace nightly batch jobs.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">May 2024 - Aug 2024</div>
+          <div>
+            <h3>Data Analyst</h3>
+            <div class="company">The University of Texas at Austin · Austin, TX</div>
+            <p>
+              Wrote a Pandas script that merges CSVs from several UT Austin colleges, and built a Tableau dashboard on how
+              non-STEM students use Coursera.
             </p>
           </div>
         </article>
@@ -697,7 +708,7 @@
             <div class="company">The University of Texas at Austin · Austin, TX</div>
             <p>
               Supported courses in data warehousing and databases, helping students with SQL, Python, dbt, BigQuery,
-              Apache Airflow, GCP, and data modeling concepts.
+              Apache Airflow, GCP, and data modeling.
             </p>
           </div>
         </article>
@@ -708,8 +719,8 @@
             <h3>Data Engineer</h3>
             <div class="company">Capgemini · Mumbai, India</div>
             <p>
-              Worked on Snowflake migration, Airflow-based ELT, SQL optimization, reporting performance improvement,
-              and cross-functional delivery of analytics-ready datasets.
+              Led a 10TB move from a legacy database to Snowflake, built an Airflow framework that runs merge logic stored
+              in a database table, and tuned slow SQL queries.
             </p>
           </div>
         </article>
@@ -734,7 +745,7 @@
           <ul class="mini-list">
             <li>AWS Certified Data Engineer - Associate</li>
             <li>SnowPro Core Certified</li>
-            <li>Machine Learning A-Z: Hands-On Python & R in Data Science</li>
+            <li>Machine Learning A-Z: Hands-On Python &amp; R in Data Science</li>
           </ul>
         </article>
       </div>
@@ -746,11 +757,11 @@
           <div class="section-kicker">Contact</div>
           <h2 class="section-title">Let’s connect</h2>
           <p class="section-subtitle">
-            I am open to Data Engineer, Data Analyst, Analytics Engineer, and backend/data-platform opportunities.
+            I'm open to Data Engineer roles. The quickest way to reach me is email or LinkedIn.
           </p>
         </div>
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:amoghhasotkar@gmail.com">Email Me</a>
+          <a class="btn btn-primary" href="mailto:amoghhasotkar@utexas.edu">Email Me</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/amoghhasotkar/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
